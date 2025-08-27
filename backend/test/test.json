@@ -1,0 +1,23 @@
+[
+  {
+    "group_code": "FLT",
+    "activity_code": "FLT",
+    "person_id": "999999",
+    "surname": "TEST",
+    "name": "TEST",
+    "base_filo": "340",
+    "class": "C1",
+    "flight_position": "C",
+    "flight_no": "99",
+    "departure_port": "IST",
+    "arrival_port": "SFO",
+    "departure_time": 1746095220000,
+    "arrival_time": 1746143580000,
+    "plane_cms_type": "35D",
+    "plane_tail_name": "TCLGN",
+    "trip_id": "test_trip_id",
+    "checkin_date": 1746085680000,
+    "duty_start": 1746089400000,
+    "duty_end": 1746145380000
+  }
+]

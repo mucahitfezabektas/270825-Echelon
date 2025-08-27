@@ -1,0 +1,128 @@
+/* src/app.css */
+
+/* Font Awesome ikon kütüphanesini import edin */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Google Fonts'tan Inter fontunu import edin.
+   Inter, modern ve profesyonel UI tasarımları için oldukça popüler ve okunaklı bir fonttur. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* THY Kurumsal Renk Paleti ve Genel Özellikler
+   :root seçicisi, CSS değişkenlerini (custom properties) tanımlamak için kullanılır.
+   Bu değişkenler, uygulamanın herhangi bir yerinden erişilebilir olacaktır. */
+:root {
+  /* THY'nin ana rengi olan canlı kırmızı */
+  --thy-primary-red: #e00000;
+  /* THY'nin ikincil rengi olan koyu mavi */
+  --thy-secondary-blue: #004b87;
+  /* Daha açık bir mavi tonu, belki vurgular veya interaktif öğeler için */
+  --thy-light-blue: #007bff; /* Bootstrap'in primary mavisine yakın */
+
+  /* Gri tonları - Kurumsal ve sade bir görünüm için önemlidir */
+  --thy-white: #ffffff; /* Saf beyaz */
+  --thy-off-white: #fcfcfc; /* Hafif kirli beyaz, içerik alanları için */
+  --thy-light-gray: #f5f5f5; /* Çok açık gri, arkaplanlar için */
+  --thy-medium-gray: #e0e0e0; /* Orta gri, kenarlıklar veya hafif vurgular için */
+  --thy-dark-gray: #a0a0a0; /* Koyu gri, daha az belirgin metinler veya ikonlar için */
+  --thy-darker-gray: #666666; /* Daha koyu gri, ikincil metinler için */
+  --thy-text-color: #333333; /* Ana metin rengi, koyu gri */
+
+  /* Diğer genel renkler */
+  --thy-success-green: #28a745; /* Başarı mesajları veya onay ikonları için */
+  --thy-danger-red: #dc3545; /* Hata mesajları veya kapatma butonları için */
+
+  /* Genel gölge ayarları */
+  --thy-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --thy-shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --thy-shadow-strong: 0 6px 15px rgba(0, 0, 0, 0.12);
+
+  /* Geçiş süreleri */
+  --thy-transition-speed: 0.2s;
+  --thy-transition-timing: ease-in-out;
+}
+
+/* Global Reset ve Temel Stiller */
+:global(html),
+:global(body) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Tüm elementler için kutu modelini border-box olarak ayarlar */
+  overflow: hidden; /* Uygulama ana çerçevesinin kaydırmasını engeller */
+  font-family: "Inter", sans-serif; /* Uygulama genelinde Inter fontunu kullanır */
+  color: var(--thy-text-color); /* Ana metin rengini THY paletinden alır */
+  background-color: var(
+    --thy-light-gray
+  ); /* Uygulamanın genel arkaplan rengi */
+  line-height: 1.6; /* Metinler arası boşluğu artırarak okunabilirliği iyileştirir */
+}
+
+/* Tüm elementler için box-sizing'i miras al */
+:global(*),
+:global(*::before),
+:global(*::after) {
+  box-sizing: inherit;
+}
+
+/* Temel HTML elementleri için sıfırlamalar ve genel stiller */
+:global(h1, h2, h3, h4, h5, h6) {
+  color: var(--thy-text-color);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 600; /* Başlıklar için biraz daha kalın font */
+}
+
+:global(p) {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+:global(a) {
+  color: var(--thy-secondary-blue); /* Linkler için THY mavisi */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  transition: color var(--thy-transition-speed) var(--thy-transition-timing);
+}
+
+:global(a:hover) {
+  color: var(--thy-primary-red); /* Hover'da THY kırmızısı */
+}
+
+:global(button),
+:global(input),
+:global(select),
+:global(textarea) {
+  font-family: "Inter", sans-serif; /* Form elemanları da Inter fontunu kullanır */
+  font-size: 1em;
+  outline: none; /* Odaklandığında varsayılan dış çizgiyi kaldır */
+}
+
+/* Genel buton stilleri */
+:global(button) {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color var(--thy-transition-speed)
+      var(--thy-transition-timing),
+    color var(--thy-transition-speed) var(--thy-transition-timing),
+    box-shadow var(--thy-transition-speed) var(--thy-transition-timing);
+}
+
+/* Input ve textarea için temel stiller */
+:global(input[type="text"]),
+:global(input[type="email"]),
+:global(input[type="password"]),
+:global(textarea) {
+  padding: 8px 12px;
+  border: 1px solid var(--thy-medium-gray);
+  border-radius: 4px;
+  background-color: var(--thy-white);
+  color: var(--thy-text-color);
+  transition: border-color var(--thy-transition-speed)
+    var(--thy-transition-timing);
+}
+
+:global(input[type="text"]:focus),
+:global(input[type="email"]:focus),
+:global(input[type="password"]:focus),
+:global(textarea:focus) {
+  border-color: var(--thy-secondary-blue); /* Odaklandığında mavi kenarlık */
+  box-shadow: 0 0 0 2px rgba(0, 75, 135, 0.2); /* Hafif mavi gölge */
+}

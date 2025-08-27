@@ -1,0 +1,24 @@
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "node", // "bundler" yerine "node" olarak güncellendi.
+    // Bu, çoğu Node.js tabanlı geliştirme ortamında ve bundler'da (Webpack, Rollup, Vite) daha iyi modül çözünürlüğü sağlar.
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["svelte", "node"],
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "lib": ["dom", "es2021"] // "lib" eklendi. Bu, TypeScript'e hangi standart kütüphane tip tanımlamalarını kullanacağını söyler.
+    // "dom" tarayıcı ortamı (HTMLElement, DOMRect vb.) için gereklidir.
+    // "es2021" ise modern JavaScript özellikleri için tip tanımlamalarını içerir.
+  }
+}
